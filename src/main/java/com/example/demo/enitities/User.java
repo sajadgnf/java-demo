@@ -1,12 +1,18 @@
 package com.example.demo.enitities;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
+@ToString
 @Setter
 @Getter
 @Entity
@@ -43,7 +49,7 @@ public class User {
 
     @ManyToMany
     @JoinTable(name = "wishlist", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "product_id"))
-    private Set<Product> wishlist = new HashSet<>();
+    private Set<Product> wishlist = new HashSet();
 
     public void addToWishlist(Product product) {
         wishlist.add(product);
