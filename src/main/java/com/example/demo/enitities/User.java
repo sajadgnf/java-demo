@@ -7,14 +7,18 @@ import java.util.Set;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @ToString
-@Setter
 @Getter
+@Setter
 @Entity
 @Table(name = "users")
 public class User {
