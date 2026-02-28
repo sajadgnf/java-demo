@@ -1,6 +1,7 @@
 package com.example.demo.dtos;
 
 import com.example.demo.enitities.Address;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,7 +17,8 @@ public class AddressDto {
     private String city;
 
     public static AddressDto from(Address address) {
-        if (address == null) return null;
+        if (address == null)
+            return null;
         return new AddressDto(address.getId(), address.getStreet(), address.getCity());
     }
 }
